@@ -1,7 +1,7 @@
 /**
- * @description Find functions directly called by tests
+ * @description Find tests that call getActionKey
  * @kind problem
- * @id javascript/functions-directly-called-by-tests
+ * @id javascript/tests-that-call-get-action-key
  * @problem.severity recommendation
  */
 import javascript
