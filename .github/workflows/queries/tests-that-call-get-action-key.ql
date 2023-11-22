@@ -28,7 +28,7 @@ predicate callsGetActionKey(Function caller) {
   )
 }
 
-from Function test, Function callee
+from Function test
 where isTest(test) and
       callsGetActionKey(test)
 select test, "calls getActionKey"
