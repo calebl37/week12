@@ -21,15 +21,14 @@ predicate isTest(Function test) {
 /**
 * Holds if `caller` contains a call to `pressActionKey`
 */
-predicate callsGetActionKey(Function caller, Function callee) {
+predicate callsGetActionKey(Function caller) {
   exists(DataFlow::CallNode call |
     call.getEnclosingFunction() = caller and
-    call.getACallee() = callee and
-    callee.getName() = "pressActionKey"
+    call.getACallee().getName() = "pressActionKey"
   )
 }
 
-from Function test, Function callee
+from Function test
 where isTest(test) and
-      callsGetActionKey(test, callee)
+      callsGetActionKey(test)
 select test, "calls getActionKey"
